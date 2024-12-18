@@ -1,5 +1,7 @@
 # Spline Gen Plugin
 
+This plugin is featured in Park Studio. Special thanks to Creye Games for help with QA and debugging!
+
 Crude, mostly undocumented plugin for resolving Unreal Engine's spline component twisting issues caused by incorrect quaternion cubic spline interpolation. The solution is simply create and use a spline of up vectors instead, which interpolate correctly and fix the spline twisting issue.
 
 Plugin contains other various functionality for assisting runtime spline editing and spline mesh generation. Great for roller coasters and racetracks.
