@@ -1,0 +1,12 @@
+Engine/Source/Runtime/Engine/Classes/Components/SplineComponent.h
+Engine/Source/Runtime/Engine/Private/Components/SplineComponent.cpp
+Engine/Source/Editor/ComponentVisualizers/Private/SplineComponentVisualizer.cpp
+
+This completely resolves spline twisting issues by switching to up vector interpolation instead of using the broken quaternion interpolation. Remaining rotation data simply requires a tangent to get the forward vector to complete the rotation.
+
+ISSUES:
+- The Unreal Editor integration is not complete, and results in crashes.
+- Quaternion spline is not removed, only up vector spline was added. Quaternion spline needs to be removed for a clean implementation, relying only on constructing a quaternion with the up vector and forward vector instead.
+- Alternative implementation is to fix quaternion spline interpolation.
+
+Based on UE 5.4, completely untested elsewhere.
